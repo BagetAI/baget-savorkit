@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SavorKit | Freshly Measured Global Spice Kits For Busy Home Cooks</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandWarmWhite: '#FFF8F0',
+                        brandCoral: '#FF6B4A',
+                        brandYellow: '#FFD23F',
+                        brandNavy: '#1B2A4A',
+                        brandCream: '#FAF3EC',
+                    },
+                    fontFamily: {
+                        heading: ['"Space Grotesk"', 'sans-serif'],
+                        body: ['"DM Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FFF8F0;
+            color: #1B2A4A;
+            font-family: 'DM Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+        .chunky-shadow {
+            box-shadow: 4px 4px 0px 0px #1B2A4A;
+        }
+        .chunky-shadow-coral {
+            box-shadow: 6px 6px 0px 0px #FF6B4A;
+        }
+        .chunky-shadow-yellow {
+            box-shadow: 6px 6px 0px 0px #FFD23F;
+        }
+        .chunky-border {
+            border: 3px solid #1B2A4A;
+        }
+        .btn-coral {
+            background-color: #FF6B4A;
+            color: #FFF8F0;
+            border: 3px solid #1B2A4A;
+            box-shadow: 4px 4px 0px 0px #1B2A4A;
+            transition: all 0.15s ease-in-out;
+        }
+        .btn-coral:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #1B2A4A;
+        }
+        .btn-coral:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #1B2A4A;
+        }
+        .btn-yellow {
+            background-color: #FFD23F;
+            color: #1B2A4A;
+            border: 3px solid #1B2A4A;
+            box-shadow: 4px 4px 0px 0px #1B2A4A;
+            transition: all 0.15s ease-in-out;
+        }
+        .btn-yellow:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #1B2A4A;
+        }
+        .btn-yellow:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #1B2A4A;
+        }
+        .recipe-tab.active {
+            background-color: #FF6B4A;
+            color: #FFF8F0;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="w-full py-5 px-6 md:px-12 bg-brandWarmWhite border-b-3 chunky-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <span class="text-3xl font-extrabold tracking-tight text-brandNavy font-heading flex items-center gap-2">
+                    <span class="bg-brandCoral text-brandWarmWhite px-3 py-1 rounded-xl chunky-border chunky-shadow">S</span>
+                    SavorKit
+                </span>
+            </a>
+            <nav class="hidden md:flex gap-8 items-center font-bold text-brandNavy">
+                <a href="#how-it-works" class="hover:text-brandCoral transition-colors">How It Works</a>
+                <a href="#recipes" class="hover:text-brandCoral transition-colors">Launch Menus</a>
+                <a href="#pricing" class="hover:text-brandCoral transition-colors">Pricing Structure</a>
+            </nav>
+            <div>
+                <a href="#waitlist-form" class="btn-yellow px-6 py-2.5 rounded-2xl font-bold text-sm tracking-wide inline-block">
+                    Join Waitlist
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow">
+        
+        <!-- Hero Section -->
+        <section class="py-12 md:py-20 px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 flex flex-col justify-center text-left">
+                <div class="inline-block bg-brandYellow text-brandNavy border-2 border-brandNavy font-bold text-xs uppercase tracking-wider px-4 py-1.5 rounded-full w-fit mb-6 shadow-sm">
+                    Coming Fall 2026
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight text-brandNavy font-heading mb-6">
+                    The entire world. <br>One pan. <span class="text-brandCoral">Zero waste.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-brandNavy/90 font-medium mb-8 max-w-2xl leading-relaxed">
+                    Stop buying $8 jars of spices you only use once. SavorKit delivers single-dinner organic spice kits measured with mathematical culinary precision, paired with masterclass recipe cards. Recreate vibrant global masterpieces at home in under 30 minutes.
+                </p>
+
+                <!-- Embedded Captive Waitlist Form -->
+                <div class="p-6 md:p-8 bg-brandCream border-3 chunky-border rounded-2xl chunky-shadow-coral mb-4 max-w-xl" id="waitlist-form-container">
+                    <h3 class="text-xl font-bold mb-3 text-brandNavy">Get 3 Free Kits on Launch Day</h3>
+                    <p class="text-sm text-brandNavy/80 mb-5">Join the exclusive 2026 waitlist. Be the first to try our authentic Thai, Szechuan, and Moroccan kits.</p>
+                    
+                    <form id="leadForm" class="flex flex-col gap-3">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <input 
+                                type="text" 
+                                id="firstName" 
+                                placeholder="Your Name" 
+                                required
+                                class="px-4 py-3 rounded-xl border-3 chunky-border text-brandNavy placeholder-brandNavy/50 font-bold bg-white focus:outline-none focus:ring-2 focus:ring-brandCoral"
+                            >
+                            <input 
+                                type="email" 
+                                id="email" 
+                                placeholder="Your Email Address" 
+                                required
+                                class="px-4 py-3 rounded-xl border-3 chunky-border text-brandNavy placeholder-brandNavy/50 font-bold bg-white focus:outline-none focus:ring-2 focus:ring-brandCoral"
+                            >
+                        </div>
+                        <button 
+                            type="submit" 
+                            id="submitButton"
+                            class="btn-coral w-full py-3.5 rounded-xl font-extrabold text-base tracking-wide"
+                        >
+                            Secure Early Access & Gift
+                        </button>
+                    </form>
+                    <div id="formFeedback" class="hidden mt-4 p-4 rounded-xl border-3 chunky-border font-bold text-center"></div>
+                </div>
+                
+                <div class="flex items-center gap-4 text-sm font-bold text-brandNavy/70 mt-2">
+                    <span class="flex items-center gap-1.5">
+                        <svg class="w-5 h-5 text-brandCoral" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                        100% Organic Spices
+                    </span>
+                    <span class="flex items-center gap-1.5">
+                        <svg class="w-5 h-5 text-brandCoral" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                        Zero Plastic Sachet Waste
+                    </span>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-5 relative">
+                <div class="chunky-border border-3 rounded-2xl overflow-hidden chunky-shadow-yellow bg-white">
+                    <img 
+                        src="images/professional-high-angle-shot-of-three-mi.png" 
+                        alt="SavorKit Premium Sustainable Packaging Mockup with Recipe Cards and Global Spices" 
+                        class="w-full h-auto object-cover"
+                    />
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-brandYellow border-3 chunky-border rounded-xl p-4 chunky-shadow text-center max-w-[200px] hidden md:block">
+                    <p class="text-xs font-black uppercase tracking-wider text-brandNavy mb-1">Early Member Perks</p>
+                    <p class="text-base font-bold text-brandNavy">Free Ground shipping forever</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition Badges -->
+        <section class="py-16 bg-brandCream border-t-3 border-b-3 chunky-border px-6 md:px-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-brandNavy font-heading leading-tight">
+                        Why SavorKit Beats the Cupboard Clutter
+                    </h2>
+                    <p class="text-lg text-brandNavy/80 font-medium mt-4">
+                        The average special spice jar loses its aroma within 6 months. We design out waste while amplifying culinary intensity.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white border-3 chunky-border rounded-2xl p-8 chunky-shadow flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-brandCoral border-2 border-brandNavy flex items-center justify-center font-black text-brandWarmWhite text-xl mb-6 shadow-sm">
+                                01
+                            </div>
+                            <h3 class="text-2xl font-bold text-brandNavy font-heading mb-4">Zero Waste Portioning</h3>
+                            <p class="text-brandNavy/85 leading-relaxed font-medium">
+                                No more committing to an $8 jar of sumac or fenugreek for a single recipe. Get the exact grams needed to perfectly season your 4-serving family dinner.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="bg-white border-3 chunky-border rounded-2xl p-8 chunky-shadow flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-brandYellow border-2 border-brandNavy flex items-center justify-center font-black text-brandNavy text-xl mb-6 shadow-sm">
+                                02
+                            </div>
+                            <h3 class="text-2xl font-bold text-brandNavy font-heading mb-4">Aroma Lock Protection</h3>
+                            <p class="text-brandNavy/85 leading-relaxed font-medium">
+                                Our spices are steam-sterilized, custom-roasted, and sealed instantly using compostable, nitrogen-purged sachets to lock in volatile flavor oils for 18 months.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="bg-white border-3 chunky-border rounded-2xl p-8 chunky-shadow flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-brandNavy border-2 border-brandNavy flex items-center justify-center font-black text-brandWarmWhite text-xl mb-6 shadow-sm">
+                                03
+                            </div>
+                            <h3 class="text-2xl font-bold text-brandNavy font-heading mb-4">Sourcing Transparency</h3>
+                            <p class="text-brandNavy/85 leading-relaxed font-medium">
+                                Sourced directly from certified organic farms, backed by Certificates of Analysis (CoA) validating purity. Safe, non-irradiated, and completely allergen-isolated.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Menu Showcase Section -->
+        <section class="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto" id="recipes">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-brandNavy font-heading leading-tight">
+                    Explore the Launch Recipes
+                </h2>
+                <p class="text-lg text-brandNavy/80 font-medium mt-4">
+                    Each SavorKit contains up to three sequential spice pouches (for blooming, base seasoning, and final garnish) to build layers of restaurant-style flavor.
+                </p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <button onclick="switchRecipe('thai')" id="tab-thai" class="recipe-tab active px-6 py-3 border-3 chunky-border rounded-xl font-bold text-sm tracking-wide transition-all chunky-shadow">
+                    Thai Green Curry
+                </button>
+                <button onclick="switchRecipe('moroccan')" id="tab-moroccan" class="recipe-tab px-6 py-3 border-3 chunky-border rounded-xl font-bold text-sm tracking-wide transition-all bg-white text-brandNavy chunky-shadow">
+                    Moroccan Tagine
+                </button>
+                <button onclick="switchRecipe('szechuan')" id="tab-szechuan" class="recipe-tab px-6 py-3 border-3 chunky-border rounded-xl font-bold text-sm tracking-wide transition-all bg-white text-brandNavy chunky-shadow">
+                    Szechuan Mapo Tofu
+                </button>
+            </div>
+
+            <!-- Recipe Contents -->
+            <div class="bg-white border-3 chunky-border rounded-2xl p-8 md:p-12 chunky-shadow-coral max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <!-- Thai Content -->
+                <div id="recipe-thai" class="recipe-content md:col-span-7 flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold text-brandNavy font-heading mb-2">Bangkok Garden Green Curry</h3>
+                    <p class="text-brandCoral font-bold mb-4 uppercase tracking-wider text-sm">Cuisine: Thai | Preparation: 25 Mins</p>
+                    <p class="text-brandNavy/90 font-medium mb-6">
+                        An aromatic curry packing deep herbaceous warmth. Our kit ensures the perfect ratios of elusive ingredients like real kaffir lime leaf dust, lemongrass powder, and premium galangal blend without forcing you to travel to three specialty markets.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <span class="bg-brandYellow border-2 border-brandNavy text-xs font-black px-2 py-0.5 rounded mt-0.5">POUCH A</span>
+                            <p class="text-sm text-brandNavy/85 font-medium"><strong class="font-bold">Aromatic Oil Bloom:</strong> Crushed lemongrass, kaffir lime zest, and green chile flakes to toast in warm coconut oil.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="bg-brandYellow border-2 border-brandNavy text-xs font-black px-2 py-0.5 rounded mt-0.5">POUCH B</span>
+                            <p class="text-sm text-brandNavy/85 font-medium"><strong class="font-bold">Base Seasoning:</strong> Roasted white pepper, toasted coriander seed powder, galangal root, and mild green chile powder.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="bg-brandYellow border-2 border-brandNavy text-xs font-black px-2 py-0.5 rounded mt-0.5">POUCH C</span>
+                            <p class="text-sm text-brandNavy/85 font-medium"><strong class="font-bold">Finishing Herb Garnish:</strong> Micro-milled Thai sweet basil leaves and clean dehydrated shallots.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Moroccan Content -->
+                <div id="recipe-moroccan" class="recipe-content hidden md:col-span-7 flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold text-brandNavy font-heading mb-2">Imperial Marrakech Tagine</h3>
+                    <p class="text-brandCoral font-bold mb-4 uppercase tracking-wider text-sm">Cuisine: North African | Preparation: 30 Mins</p>
+                    <p class="text-brandNavy/90 font-medium mb-6">
+                        A rich, sweet, and deeply earthy slow-simmered feast. Traditional Tagines rely heavily on exact spice metrics to balance warm sweet spices with robust earthiness without letting cinnamon dominate the dish.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <span class="bg-brandYellow border-2 border-brandNavy text-xs font-black px-2 py-0.5 rounded mt-0.5">POUCH A</span>
+                            <p class="text-sm text-brandNavy/85 font-medium"><strong class="font-bold">Base Sauté:</strong> Toasted cumin seeds, ground coriander, and Spanish sweet paprika to sauté with onions.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="bg-brandYellow border-2 border-brandNavy text-xs font-black px-2 py-0.5 rounded mt-0.5">POUCH B</span>
+                            <p class="text-sm text-brandNavy/85 font-medium"><strong class="font-bold">Simmer Blend:</strong> True Ceylon cinnamon, premium turmeric, whole ground ginger, and Moroccan saffron threads.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="bg-brandYellow border-2 border-brandNavy text-xs font-black px-2 py-0.5 rounded mt-0.5">POUCH C</span>
+                            <p class="text-sm text-brandNavy/85 font-medium"><strong class="font-bold">Fragrant Finish:</strong> Ground sumac, toasted sesame seeds, and a subtle touch of cardamon powder.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Szechuan Content -->
+                <div id="recipe-szechuan" class="recipe-content hidden md:col-span-7 flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold text-brandNavy font-heading mb-2">Chongqing Fire Mapo Tofu</h3>
+                    <p class="text-brandCoral font-bold mb-4 uppercase tracking-wider text-sm">Cuisine: Szechuan Chinese | Preparation: 20 Mins</p>
+                    <p class="text-brandNavy/90 font-medium mb-6">
+                        Experience the authentic "málà" (numbing & spicy) sensation. This kit showcases real premium grade Red Szechuan Peppercorns and fermented broad bean spices, calibrated perfectly to provide tingling warmth without overpowering your palate.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <span class="bg-brandYellow border-2 border-brandNavy text-xs font-black px-2 py-0.5 rounded mt-0.5">POUCH A</span>
+                            <p class="text-sm text-brandNavy/85 font-medium"><strong class="font-bold">Oil Bloom:</strong> Whole-roasted Red Szechuan Peppercorns and dry red chiles to bloom in sizzling vegetable oil.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="bg-brandYellow border-2 border-brandNavy text-xs font-black px-2 py-0.5 rounded mt-0.5">POUCH B</span>
+                            <p class="text-sm text-brandNavy/85 font-medium"><strong class="font-bold">The Sauce Body:</strong> Dehydrated organic bean paste seasonings, garlic powder, ginger, and high-oil star anise powders.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="bg-brandYellow border-2 border-brandNavy text-xs font-black px-2 py-0.5 rounded mt-0.5">POUCH C</span>
+                            <p class="text-sm text-brandNavy/85 font-medium"><strong class="font-bold">Numbing Finish:</strong> Freshly ground high-oil Szechuan Peppercorn dust to sprinkle instantly before serving.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-5 flex flex-col items-center justify-center border-t-3 md:border-t-0 md:border-l-3 chunky-border pt-8 md:pt-0 md:pl-8 text-center">
+                    <p class="text-sm font-black uppercase text-brandCoral tracking-widest mb-2">EACH KIT INCLUDES</p>
+                    <div class="space-y-2 text-brandNavy font-bold">
+                        <p>✓ 3 Stage-Pack Sachets</p>
+                        <p>✓ 1 Heavyweight Recipe Card</p>
+                        <p>✓ Grocery Shopping Checklist</p>
+                        <p>✓ Serving Size: 4 Portions</p>
+                    </div>
+                    <a href="#waitlist-form-container" class="mt-6 btn-yellow px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wide">
+                        Claim These Menus
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="py-16 bg-brandWarmWhite border-t-3 chunky-border px-6 md:px-12" id="how-it-works">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-brandNavy font-heading leading-tight">
+                        How SavorKit Works
+                    </h2>
+                    <p class="text-lg text-brandNavy/80 font-medium mt-4">
+                        Three simple steps to transition from dinner boredom to global scratch cooking exploration.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Step 1 -->
+                    <div class="p-8 bg-brandCream border-3 chunky-border rounded-2xl chunky-shadow-coral">
+                        <div class="w-12 h-12 rounded-full bg-brandCoral border-2 border-brandNavy flex items-center justify-center font-black text-white text-lg mb-6">
+                            1
+                        </div>
+                        <h4 class="text-2xl font-bold text-brandNavy font-heading mb-4">Choose Your Tour</h4>
+                        <p class="text-brandNavy/80 font-medium">
+                            Select a monthly themed spice box containing 3 distinct global dinner recipes. Your kits arrive in an ultra-flat, zero-waste mailer envelope.
+                        </p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="p-8 bg-brandCream border-3 chunky-border rounded-2xl chunky-shadow-yellow">
+                        <div class="w-12 h-12 rounded-full bg-brandYellow border-2 border-brandNavy flex items-center justify-center font-black text-brandNavy text-lg mb-6">
+                            2
+                        </div>
+                        <h4 class="text-2xl font-bold text-brandNavy font-heading mb-4">Grab Fresh Bases</h4>
+                        <p class="text-brandNavy/80 font-medium">
+                            Scan the quick QR code on your printed card to review a short, affordable grocery shopping list (e.g., coconut milk, tofu, beef, or fresh vegetables).
+                        </p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="p-8 bg-brandCream border-3 chunky-border rounded-2xl chunky-shadow">
+                        <div class="w-12 h-12 rounded-full bg-brandNavy border-2 border-brandNavy flex items-center justify-center font-black text-white text-lg mb-6">
+                            3
+                        </div>
+                        <h4 class="text-2xl font-bold text-brandNavy font-heading mb-4">Bloom, Cook, & Feast</h4>
+                        <p class="text-brandNavy/80 font-medium">
+                            Rip open stage sachets as guided by the card. Release absolute freshness, bloom the complex oils, and serve culinary-grade global dishes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Bundles Grid -->
+        <section class="py-16 bg-brandCream border-t-3 border-b-3 chunky-border px-6 md:px-12" id="pricing">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-brandNavy font-heading leading-tight">
+                        Subscription Bundles Built for Variety
+                    </h2>
+                    <p class="text-lg text-brandNavy/80 font-medium mt-4">
+                        Designed to spread logistics costs cleanly. Skip standard parcel markup fees with flat-pack envelope delivery.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Standard Tier -->
+                    <div class="bg-white border-3 chunky-border rounded-2xl p-8 chunky-shadow relative flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-brandNavy font-heading mb-2">The Global Explorer</h3>
+                            <p class="text-brandNavy/70 text-sm font-bold mb-6">Perfect for DINK couples seeking culinary adventure</p>
+                            <div class="flex items-baseline gap-2 mb-6 border-b-2 border-brandNavy/10 pb-6">
+                                <span class="text-4xl font-extrabold text-brandNavy font-heading">$29.99</span>
+                                <span class="text-brandNavy/70 text-sm font-bold">/ Month</span>
+                            </div>
+                            <ul class="space-y-4 mb-8 text-brandNavy font-medium">
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-brandCoral" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                    3 Distinct Global Recipe Kits
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-brandCoral" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                    9 Aroma-Locked Organic Spice Sachets
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-brandCoral" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                    Heavyweight Eco-Cardstock Cards
+                                </li>
+                                <li class="flex items-center gap-2 text-brandNavy/50 line-through">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                    Private Masterclass Cooking Videos
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#waitlist-form-container" class="btn-coral w-full py-3.5 rounded-xl font-bold text-center block text-sm uppercase tracking-wide">
+                            Pre-register Now
+                        </a>
+                    </div>
+
+                    <!-- Premium Tier -->
+                    <div class="bg-white border-3 chunky-border rounded-2xl p-8 chunky-shadow-coral relative flex flex-col justify-between overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-brandYellow border-b-3 border-l-3 chunky-border px-4 py-1 text-xs font-black uppercase text-brandNavy">
+                            Best Value
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-brandNavy font-heading mb-2">The Grand Feast Master</h3>
+                            <p class="text-brandNavy/70 text-sm font-bold mb-6">Designed for busy families wanting supreme culinary variety</p>
+                            <div class="flex items-baseline gap-2 mb-6 border-b-2 border-brandNavy/10 pb-6">
+                                <span class="text-4xl font-extrabold text-brandNavy font-heading">$49.99</span>
+                                <span class="text-brandNavy/70 text-sm font-bold">/ Month</span>
+                            </div>
+                            <ul class="space-y-4 mb-8 text-brandNavy font-medium">
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-brandCoral" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                    6 Distinct Global Recipe Kits
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-brandCoral" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                    18 Aroma-Locked Organic Spice Sachets
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-brandCoral" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                    Heavyweight Eco-Cardstock Cards
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-brandCoral" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                    Private Masterclass Cooking Videos
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#waitlist-form-container" class="btn-yellow w-full py-3.5 rounded-xl font-bold text-center block text-sm uppercase tracking-wide">
+                            Pre-register Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brandNavy text-brandWarmWhite border-t-3 chunky-border py-12 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div>
+                <p class="text-2xl font-extrabold font-heading text-brandWarmWhite mb-2">SavorKit</p>
+                <p class="text-sm text-brandWarmWhite/70 font-medium">Pre-portioned organic spice kits for home-cooked global dinners.</p>
+            </div>
+            <div class="text-sm text-brandWarmWhite/60 font-bold">
+                <p>© 2026 SavorKit Inc. All rights reserved.</p>
+                <p class="mt-1">Hand-measured & packed following strict FDA FSMA 204 safety guidelines.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript code -->
+    <script src="script.js"></script>
+</body>
+</html>
